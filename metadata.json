@@ -1,0 +1,5 @@
+{
+  "name": "Requirements Definition Generator",
+  "description": "An application to generate a comprehensive Requirements Definition Document from various inputs like text, files, or images, using a sophisticated template. It can export the final document to Markdown or CSV formats.",
+  "requestFramePermissions": []
+}
