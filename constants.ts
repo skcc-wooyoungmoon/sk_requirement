@@ -32,6 +32,25 @@ Follow these steps meticulously:
 -   **For new projects (if not specified otherwise)**: Start generic categories like FR-XXX from 001.
 -   **Ensure IDs are unique and sequential.**
 
+# ✍️ 상세 설명 작성 가이드 (Description Detailing Guide)
+
+**매우 중요**: 모든 기능 요구사항의 '상세 설명'은 **시퀀스 다이어그램을 그릴 수 있을 정도로 상세하고 명확해야 합니다.** 다음 지침을 반드시 따르세요.
+
+-   **행위자(Actor) 명시**: 누가 또는 무엇이 이 기능을 시작하는가? (예: 사용자, 외부 시스템, 스케줄러)
+-   **시스템 상호작용**: 관련된 모든 시스템, 컴포넌트, 데이터베이스를 명시하세요.
+-   **단계별 프로세스**: 기능이 실행되는 과정을 순서대로, 단계별로 서술하세요.
+    -   1. 사용자가 [버튼]을 클릭한다.
+    -   2. 프론트엔드 시스템은 [API]로 [데이터]를 요청한다.
+    -   3. 백엔드 시스템은 요청을 검증하고, [데이터베이스]에서 정보를 조회한다.
+    -   4. 백엔드 시스템은 조회된 결과를 [형식]으로 프론트엔드에 반환한다.
+    -   5. 프론트엔드는 받은 데이터를 화면에 표시한다.
+-   **데이터 흐름**: 각 단계에서 어떤 데이터가 오고 가는지 구체적으로 명시하세요.
+-   **예외 처리**: 성공 시나리오뿐만 아니라, 오류나 예외 상황에 대한 처리 과정도 간략히 포함하세요. (예: "만약 데이터가 없을 경우, '결과 없음' 메시지를 표시한다.")
+
+**예시 (Example):**
+-   **기존 방식 (Bad)**: "사용자는 상품을 검색할 수 있다."
+-   **개선 방식 (Good)**: "1. **사용자**가 검색창에 키워드를 입력하고 '검색' 버튼을 클릭한다. 2. **프론트엔드**는 '/api/products/search' 엔드포인트로 키워드를 담아 GET 요청을 보낸다. 3. **백엔드 서버**는 요청을 받아 **데이터베이스**의 상품 테이블에서 키워드와 일치하는 상품 목록을 조회한다. 4. **백엔드 서버**는 조회된 상품 목록(상품명, 가격, 이미지 URL 포함)을 JSON 형식으로 **프론트엔드**에 응답한다. 5. **프론트엔드**는 응답받은 데이터를 상품 목록 페이지에 렌더링한다. 만약 검색 결과가 없으면 '검색 결과가 없습니다'라는 메시지를 표시한다."
+
 # 📄 Standard Output Template (for Markdown)
 
 Generate a complete markdown document following this structure. Fill in the placeholders based on the user's input.
@@ -48,7 +67,7 @@ Generate a complete markdown document following this structure. Fill in the plac
 ## 🔧 기능 요구사항 (Functional Requirements)
 | ID | 요구사항명 | 상세 설명 | 우선순위 | 검증 기준 |
 |----|------------|-----------|----------|-----------|
-| FUN-XXX | [기능명] | [시스템]이 [조건]에서 [객체]를 [동작]한다 | Must Have | 1. [구체적 기준1]\n2. [구체적 기준2] |
+| FUN-XXX | [기능명] | **[시퀀스 다이어그램 작성이 가능하도록 상세히 서술]** | Must Have | 1. [구체적 기준1]\n2. [구체적 기준2] |
 
 ## 🛡️ 비기능 요구사항 (Non-Functional Requirements)
 ### 성능 요구사항
